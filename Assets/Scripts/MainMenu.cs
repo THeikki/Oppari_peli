@@ -48,6 +48,10 @@ public class MainMenu : MonoBehaviour
         {
             webErrorText.text = alert + "\n" + "Please restart the game!";
         }
+        else
+        {
+            webErrorText.text = alert;
+        }
     }
     
     public void CheckIfCarAndLevelIsSelected()
