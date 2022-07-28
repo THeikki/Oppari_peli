@@ -78,7 +78,7 @@ public class APIManager : MonoBehaviour
         {
             string alert = error.Status.ToString();
             //Debug.Log(error.Status);
-
+            
             if (alert == "ConnectFailure")
             {
                 FindObjectOfType<Login>().alertText.text = alert + "\n" + "Lost connection to server!";
@@ -95,6 +95,7 @@ public class APIManager : MonoBehaviour
             FindObjectOfType<Login>().username.text = "";
             FindObjectOfType<Login>().password.text = "";
             FindObjectOfType<Login>().loginButton.interactable = false;
+            
         }
     }
 

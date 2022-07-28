@@ -12,10 +12,10 @@ public class ObstacleSelection : MonoBehaviour
 
     void Start()
     {
-        InstantiateLevels();
+        InstantiateObstacles();
     }
 
-    public void InstantiateLevels()
+    public void InstantiateObstacles()
     {
         foreach (Obstacle o in Game_manager.manager.obsctacles)
         {

@@ -13,20 +13,20 @@ public class Login : MonoBehaviour
     public InputField username;
     public InputField password;
     public Button loginButton;
-    
+   
     private void Awake()
     {
         loginButton.interactable = false;
     }
 
     void Start()
-    {   
+    {
         alertText.text = "";
         username.text = "";
         password.text = "";
         CheckIfAllCrecentialsIsGiven();
     }
-    
+
     public void CheckIfAllCrecentialsIsGiven()
     {
         if (username.text != "" && password.text != "")
