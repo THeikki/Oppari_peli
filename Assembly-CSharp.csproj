@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Login.cs" />
     <Compile Include="Assets\Scripts\PenaltyController.cs" />
+    <Compile Include="Assets\Scripts\ObstacleSelection.cs" />
     <Compile Include="Assets\Scripts\SceneChange.cs" />
     <Compile Include="Assets\Scripts\LevelSelector.cs" />
     <Compile Include="Assets\Scripts\APIManager.cs" />
@@ -71,12 +72,12 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\GameOverMenu.cs" />
     <Compile Include="Assets\Scripts\Game_manager.cs" />
+    <Compile Include="Assets\Scripts\ErrorMessageManager.cs" />
     <Compile Include="Assets\Scripts\CarMovement.cs" />
+    <Compile Include="Assets\Scripts\Obstacle.cs" />
     <Compile Include="Assets\Scripts\CarSelector.cs" />
     <Compile Include="Assets\Scripts\Car.cs" />
     <Compile Include="Assets\Scripts\PlayerStatistics.cs" />
-    <Compile Include="Assets\Scripts\ObstacleSelection.cs" />
-    <Compile Include="Assets\Scripts\Obstacle.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

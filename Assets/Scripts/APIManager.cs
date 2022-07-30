@@ -69,7 +69,9 @@ public class APIManager : MonoBehaviour
                     string[] resultParts = result.Split(':');
                     alert = resultParts[1].Trim('"', '}');
                     FindObjectOfType<Login>().loginButton.interactable = false;
-                    FindObjectOfType<Login>().alertText.text = alert;
+                    //FindObjectOfType<Login>().alertText.text = alert;
+                    FindObjectOfType<ErrorMessageManager>().errorCanvas.gameObject.SetActive(true);
+                    FindObjectOfType<ErrorMessageManager>().SetAlertType(alert);
                     return;
                 }
             }
@@ -77,21 +79,12 @@ public class APIManager : MonoBehaviour
         catch (WebException error)
         {
             string alert = error.Status.ToString();
-            //Debug.Log(error.Status);
-            
-            if (alert == "ConnectFailure")
-            {
-                FindObjectOfType<Login>().alertText.text = alert + "\n" + "Lost connection to server!";
-            }
-            else if (alert == "NameResolutionFailure")
-            {
-                FindObjectOfType<Login>().alertText.text = alert + "\n" + "Please check internet connection!";
-            }
-            else
-            {
-                FindObjectOfType<Login>().alertText.text = alert;
-            }
-            
+
+            FindObjectOfType<ErrorMessageManager>().errorCanvas.gameObject.SetActive(true);
+            FindObjectOfType<ErrorMessageManager>().SetAlertType(alert);
+
+            //Game_manager.manager.alertText = error.Status.ToString();
+
             FindObjectOfType<Login>().username.text = "";
             FindObjectOfType<Login>().password.text = "";
             FindObjectOfType<Login>().loginButton.interactable = false;
@@ -178,9 +171,10 @@ public class APIManager : MonoBehaviour
         }
         catch (WebException error)
         {
+            string alert = error.Status.ToString();
             Debug.Log(error.Status);
-
-            Game_manager.manager.alertText = error.Status.ToString();
+            //FindObjectOfType<ErrorMessageManager>().errorCanvas.gameObject.SetActive(true);
+            //FindObjectOfType<ErrorMessageManager>().SetAlertType(alert);
         }
     }
 
@@ -233,7 +227,6 @@ public class APIManager : MonoBehaviour
             catch (WebException error)
             {
                 Debug.Log(error.Status);
-
                 Game_manager.manager.alertText = error.Status.ToString();
             }
         }
@@ -286,7 +279,6 @@ public class APIManager : MonoBehaviour
             catch (WebException error)
             {
                 Debug.Log(error.Status);
-
                 Game_manager.manager.alertText = error.Status.ToString();
             }
         }
@@ -340,7 +332,6 @@ public class APIManager : MonoBehaviour
             catch (WebException error)
             {
                 Debug.Log(error.Status);
-
                 Game_manager.manager.alertText = error.Status.ToString();
             }
         }

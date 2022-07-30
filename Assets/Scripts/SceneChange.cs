@@ -50,6 +50,11 @@ public class SceneChange : MonoBehaviour
         FindObjectOfType<MainMenu>().controlsCanvas.gameObject.SetActive(false);
     }
 
+    public void CloseErrorCanvas()
+    {
+        FindObjectOfType<ErrorMessageManager>().errorCanvas.gameObject.SetActive(false);
+    }
+
     public void OpenMainMenu()
     {
         FindObjectOfType<PlayerStatistics>().IncreasePlayerData();

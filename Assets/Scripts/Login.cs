@@ -9,11 +9,10 @@ using UnityEngine.UI;
 
 public class Login : MonoBehaviour
 {
-    public Text alertText;
     public InputField username;
     public InputField password;
     public Button loginButton;
-   
+    
     private void Awake()
     {
         loginButton.interactable = false;
@@ -21,7 +20,6 @@ public class Login : MonoBehaviour
 
     void Start()
     {
-        alertText.text = "";
         username.text = "";
         password.text = "";
         CheckIfAllCrecentialsIsGiven();

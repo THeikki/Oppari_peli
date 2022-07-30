@@ -9,13 +9,11 @@ public class MainMenu : MonoBehaviour
     public Button playButton;
     public Text selectedCar;
     public Text selectedLevel;
-    public Text webErrorText;
     public Canvas carSelectorCanvas;
     public Canvas levelSelectorCanvas;
     public Canvas rulesCanvas;
     public Canvas controlsCanvas;
-    string alert;
-
+   
     private void Awake()
     {
         playButton.interactable = false;
@@ -27,33 +25,16 @@ public class MainMenu : MonoBehaviour
    
     private void Start()
     {
-        alert = Game_manager.manager.alertText;
+        if(Game_manager.manager.alertText != "")
+        {
+            FindObjectOfType<ErrorMessageManager>().errorCanvas.gameObject.SetActive(true);
+            FindObjectOfType<ErrorMessageManager>().SetAlertType(Game_manager.manager.alertText);
+        }
         selectedCar.text = "Selected car: " + Game_manager.manager.currentCar.carName;
         selectedLevel.text = "Selected level: " + Game_manager.manager.currentLevel.level;
-        CheckAlertType();
         CheckIfCarAndLevelIsSelected();
     }
-    
-    public void CheckAlertType()
-    {
-        if (alert == "ConnectFailure")
-        {
-            webErrorText.text = alert + "\n" + "Lost connection to server!";
-        }
-        else if (alert == "NameResolutionFailure")
-        {
-            webErrorText.text = alert + "\n" + "Please check internet connection!";
-        }
-        else if (alert == "ProtocolError")
-        {
-            webErrorText.text = alert + "\n" + "Please restart the game!";
-        }
-        else
-        {
-            webErrorText.text = alert;
-        }
-    }
-    
+   
     public void CheckIfCarAndLevelIsSelected()
     {
         if (selectedCar.text.Length > 15 && selectedLevel.text.Length > 18)
