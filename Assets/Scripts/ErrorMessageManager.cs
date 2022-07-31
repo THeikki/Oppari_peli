@@ -31,6 +31,11 @@ public class ErrorMessageManager : MonoBehaviour
             webErrorText.text = alert;
             infoText.text = "Please restart the game!";
         }
+        else if (alert == "UnknownError")
+        {
+            webErrorText.text = alert;
+            infoText.text = "Error occured! Please try again";
+        }
         else
         {
             webErrorText.text = alert;

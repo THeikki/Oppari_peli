@@ -69,7 +69,6 @@ public class APIManager : MonoBehaviour
                     string[] resultParts = result.Split(':');
                     alert = resultParts[1].Trim('"', '}');
                     FindObjectOfType<Login>().loginButton.interactable = false;
-                    //FindObjectOfType<Login>().alertText.text = alert;
                     FindObjectOfType<ErrorMessageManager>().errorCanvas.gameObject.SetActive(true);
                     FindObjectOfType<ErrorMessageManager>().SetAlertType(alert);
                     return;
@@ -82,9 +81,6 @@ public class APIManager : MonoBehaviour
 
             FindObjectOfType<ErrorMessageManager>().errorCanvas.gameObject.SetActive(true);
             FindObjectOfType<ErrorMessageManager>().SetAlertType(alert);
-
-            //Game_manager.manager.alertText = error.Status.ToString();
-
             FindObjectOfType<Login>().username.text = "";
             FindObjectOfType<Login>().password.text = "";
             FindObjectOfType<Login>().loginButton.interactable = false;
@@ -173,8 +169,8 @@ public class APIManager : MonoBehaviour
         {
             string alert = error.Status.ToString();
             Debug.Log(error.Status);
-            //FindObjectOfType<ErrorMessageManager>().errorCanvas.gameObject.SetActive(true);
-            //FindObjectOfType<ErrorMessageManager>().SetAlertType(alert);
+            FindObjectOfType<ErrorMessageManager>().errorCanvas.gameObject.SetActive(true);
+            FindObjectOfType<ErrorMessageManager>().SetAlertType(alert);
         }
     }
 
