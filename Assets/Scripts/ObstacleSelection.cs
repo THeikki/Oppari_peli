@@ -25,8 +25,8 @@ public class ObstacleSelection : MonoBehaviour
             obstacleName = option.transform.GetChild(0).GetComponent<Text>();
             obstacleName.text = o.obstacle;
 
-            obstacleName = option.transform.GetChild(1).GetComponent<Text>();
-            obstacleName.text = o.penalty;
+            obstaclePenalty = option.transform.GetChild(1).GetComponent<Text>();
+            obstaclePenalty.text = o.penalty;
 
             obstacleImage = option.transform.GetChild(2).GetComponent<Image>();
             obstacleImage.sprite = o.image;
