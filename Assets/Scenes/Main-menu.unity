@@ -2674,7 +2674,7 @@ MonoBehaviour:
   m_Text: '* Drive to the finish line as fast as you can
 
 
-    * Do not hit the animals
+    * Do not hit animals
     or other obstacles (PENALTY)'
 --- !u!222 &748492748
 CanvasRenderer:
