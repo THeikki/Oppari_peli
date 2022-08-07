@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class UserInputController : MonoBehaviour
 {
     public bool gameIsPaused;
+    public bool quitIsPressed;
+    public bool pauseIsPressed;
     public bool timerIsOn;
     public Canvas pauseCanvas;
     public Canvas quitCanvas;
@@ -18,7 +20,7 @@ public class UserInputController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !pauseIsPressed)
         {
             if(FindObjectOfType<TimeController>().timerIsOn)
             {
@@ -26,26 +28,29 @@ public class UserInputController : MonoBehaviour
                 timerIsOn = false;
             }
             gameIsPaused = true;
+            quitIsPressed = true;
             quitCanvas.gameObject.SetActive(true);
             if(FindObjectOfType<CarMovement>().audioSound.isPlaying)
             {
                 FindObjectOfType<CarMovement>().audioSound.Stop();
             }
         }
-        if(FindObjectOfType<TimeController>().timerIsOn && Input.GetKeyDown(KeyCode.Space))
+        else if(FindObjectOfType<TimeController>().timerIsOn && Input.GetKeyDown(KeyCode.Space) && !quitIsPressed)
         {
             FindObjectOfType<TimeController>().StopTimer();
             gameIsPaused = true;
+            pauseIsPressed = true;
             pauseCanvas.gameObject.SetActive(true);
             if (FindObjectOfType<CarMovement>().audioSound.isPlaying)
             {
                 FindObjectOfType<CarMovement>().audioSound.Stop();
             }
         }
-        if (gameIsPaused && Input.GetKeyDown(KeyCode.Return))
+        else if(pauseIsPressed && Input.GetKeyDown(KeyCode.Return))
         {
             FindObjectOfType<TimeController>().StartTimer();
             gameIsPaused = false;
+            pauseIsPressed = false;
             pauseCanvas.gameObject.SetActive(false);
         }
     }
@@ -57,6 +62,7 @@ public class UserInputController : MonoBehaviour
             FindObjectOfType<TimeController>().StartTimer();
             timerIsOn = true;
         }
+        quitIsPressed = false;
         gameIsPaused = false;
         quitCanvas.gameObject.SetActive(false);
     }
