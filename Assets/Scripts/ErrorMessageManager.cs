@@ -29,12 +29,12 @@ public class ErrorMessageManager : MonoBehaviour
         else if (alert == "ProtocolError")
         {
             webErrorText.text = alert;
-            infoText.text = "Please restart the game!";
+            infoText.text = "Check that your player profile is valid and restart the game!";
         }
         else if (alert == "UnknownError")
         {
             webErrorText.text = alert;
-            infoText.text = "Error occured! Please try again";
+            infoText.text = "Unknown error occured! Please try again";
         }
         else
         {
