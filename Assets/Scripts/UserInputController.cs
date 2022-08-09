@@ -8,7 +8,7 @@ public class UserInputController : MonoBehaviour
     public bool gameIsPaused;
     public bool quitIsPressed;
     public bool pauseIsPressed;
-    public bool timerIsOn;
+    public bool timerWasOn;
     public Canvas pauseCanvas;
     public Canvas quitCanvas;
 
@@ -25,7 +25,7 @@ public class UserInputController : MonoBehaviour
             if(FindObjectOfType<TimeController>().timerIsOn)
             {
                 FindObjectOfType<TimeController>().StopTimer();
-                timerIsOn = false;
+                timerWasOn = true;
             }
             gameIsPaused = true;
             quitIsPressed = true;
@@ -57,10 +57,10 @@ public class UserInputController : MonoBehaviour
 
     public void ResumeToGame()
     {
-        if (!timerIsOn)
+        if (timerWasOn)
         {
             FindObjectOfType<TimeController>().StartTimer();
-            timerIsOn = true;
+            timerWasOn = false;
         }
         quitIsPressed = false;
         gameIsPaused = false;
