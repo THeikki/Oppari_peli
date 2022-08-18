@@ -1507,7 +1507,7 @@ RectTransform:
   m_Children:
   - {fileID: 1928514569}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1852,7 +1852,7 @@ GameObject:
   - component: {fileID: 154834347}
   - component: {fileID: 154834346}
   m_Layer: 0
-  m_Name: ObstacleSpawnController
+  m_Name: ObstacleSpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1891,8 +1891,8 @@ MonoBehaviour:
   - {fileID: 833930096}
   - {fileID: 861952646}
   takenSpawnPositions: 
-  blockedValues: 
-  missingValues: 
+  blockedPositions: 
+  missingPositions: 
 --- !u!4 &154834347
 Transform:
   m_ObjectHideFlags: 0
@@ -1921,7 +1921,7 @@ Transform:
   - {fileID: 833930096}
   - {fileID: 861952646}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &169577684
 PrefabInstance:
@@ -5241,7 +5241,7 @@ GameObject:
   - component: {fileID: 433397835}
   - component: {fileID: 433397834}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: ProgressCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9928,7 +9928,7 @@ RectTransform:
   m_Children:
   - {fileID: 1261899526}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11857,7 +11857,7 @@ GameObject:
   - component: {fileID: 958961243}
   - component: {fileID: 958961242}
   m_Layer: 0
-  m_Name: PenaltyController
+  m_Name: PenaltyManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11875,7 +11875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed00ae1d282fc343b13084a233817bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitsCounter: {fileID: 130870709}
+  penaltyCounter: {fileID: 130870709}
 --- !u!4 &958961243
 Transform:
   m_ObjectHideFlags: 0
@@ -11888,7 +11888,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &962256265
 PrefabInstance:
@@ -12635,7 +12635,7 @@ GameObject:
   - component: {fileID: 1006580815}
   - component: {fileID: 1006580816}
   m_Layer: 0
-  m_Name: TimeController
+  m_Name: TimeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12653,7 +12653,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1006580816
 MonoBehaviour:
@@ -15776,7 +15776,7 @@ GameObject:
   - component: {fileID: 1277240987}
   - component: {fileID: 1277240986}
   m_Layer: 0
-  m_Name: UserInputController
+  m_Name: UserInputManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15795,7 +15795,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameIsPaused: 0
-  timerIsOn: 0
+  quitIsPressed: 0
+  pauseIsPressed: 0
+  timerWasOn: 0
   pauseCanvas: {fileID: 127727944}
   quitCanvas: {fileID: 819308849}
 --- !u!4 &1277240987
@@ -15810,7 +15812,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1277605277
 PrefabInstance:
@@ -25634,36 +25636,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 621476685617600231, guid: 4cf3530e3e905864d8de75c84018e976, type: 3}
   m_PrefabInstance: {fileID: 2138080622}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2143348073
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2143348074}
-  m_Layer: 0
-  m_Name: PlayerSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2143348074
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143348073}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56, y: 0.496, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &195498774346258758
 PrefabInstance:
   m_ObjectHideFlags: 0

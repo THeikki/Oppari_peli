@@ -92,7 +92,7 @@ public class SceneChange : MonoBehaviour
         }
 
         TimeController.time = 0;
-        PenaltyController.hits = 0;
+        PenaltyController.penaltySeconds = 0;
         Game_manager.manager.alertText = "";
     }
 }

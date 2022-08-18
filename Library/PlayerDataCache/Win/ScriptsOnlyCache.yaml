@@ -327,8 +327,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1440}
     - Class: 114
-      Script: {instanceID: 1636}
-    - Class: 114
       Script: {instanceID: 1880}
     - Class: 114
       Script: {instanceID: 2084}
@@ -338,8 +336,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2458}
     - Class: 114
       Script: {instanceID: 2606}
-    - Class: 114
-      Script: {instanceID: 2686}
     - Class: 114
       Script: {instanceID: 2778}
     - Class: 114
@@ -571,7 +567,7 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
-      Hash: 50e8977f96ffeff1d9561ba4f651de44
+      Hash: ee135213399f96806324604b22e5db7d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PenaltyController
@@ -847,7 +843,7 @@ ScriptsOnlyBuild:
     className: CrashSounds
   - hash:
       serializedVersion: 2
-      Hash: 555e7d96e53a8449e9df620dc32a234e
+      Hash: d2b832ec45d4293951150084b68cf93c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObstacleSpawnController

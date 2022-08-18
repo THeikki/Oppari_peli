@@ -7,12 +7,12 @@ public class ObstacleSpawnController : MonoBehaviour
     public GameObject[] obstaclePrefabs;
     public Transform[] spawnPoints;
     public List<int> takenSpawnPositions;
-    public List<int> blockedValues;
-    public List<int> missingValues;
-    int random;
+    public List<int> blockedPositions;
+    public List<int> missingPositions;
+    int randomObstacleAmount;
     int first;
     int second;
-    int total = 0;
+    int spawnedObstacles = 0;
     
     void Start()
     {
@@ -33,18 +33,18 @@ public class ObstacleSpawnController : MonoBehaviour
 
     public void GetSpawnPointCount()
     {
-        random = Random.Range(10, spawnPoints.Length);
+        randomObstacleAmount = Random.Range(10, spawnPoints.Length);
         //Debug.Log("MÄÄRÄ YHTEENSÄ: " + random);
 
-        if (random % 2 == 0)
+        if (randomObstacleAmount % 2 == 0)
         {
-            first = random / 2;
+            first = randomObstacleAmount / 2;
         }
         else
         {
-            first = Mathf.RoundToInt(random / 2);
+            first = Mathf.RoundToInt(randomObstacleAmount / 2);
         }
-        second = random - first;
+        second = randomObstacleAmount - first;
     }
 
     public void CheckIfObstaclesEnough()
@@ -53,20 +53,20 @@ public class ObstacleSpawnController : MonoBehaviour
         {
             if (!takenSpawnPositions.Contains(i))
             {
-                missingValues.Add(i);
+                missingPositions.Add(i);
             }
         }
        
-        if (total < 10)
+        if (spawnedObstacles < 10)
         {
-            missingValues.Reverse();
+            missingPositions.Reverse();
 
-            int i = 10 - total;
-            for(int x = 0; x < i; x++)
+            int requiredAmount = 10 - spawnedObstacles;
+            for(int i = 0; i < requiredAmount; i++)
             {
                 int randomObstacle = Random.Range(0, obstaclePrefabs.Length);
-                int r = missingValues[x];
-                Transform spawn = spawnPoints[r];
+                int position = missingPositions[i];
+                Transform spawn = spawnPoints[position];
                 Instantiate(obstaclePrefabs[randomObstacle], spawn.transform.position, spawn.transform.rotation);
             }     
         }
@@ -79,13 +79,13 @@ public class ObstacleSpawnController : MonoBehaviour
 
         if (takenSpawnPositions.Contains(randomPoint))
         {
-            blockedValues.Add(randomPoint);
+            blockedPositions.Add(randomPoint);
             return;
         }
         else
         {
             takenSpawnPositions.Add(randomPoint);
-            total += 1;
+            spawnedObstacles += 1;
         }
         Transform spawn = spawnPoints[randomPoint];
         Instantiate(obstaclePrefabs[randomObstacle], spawn.transform.position, spawn.transform.rotation);
@@ -98,13 +98,13 @@ public class ObstacleSpawnController : MonoBehaviour
 
         if (takenSpawnPositions.Contains(randomPoint))
         {
-            blockedValues.Add(randomPoint);
+            blockedPositions.Add(randomPoint);
             return;
         }
         else
         {
             takenSpawnPositions.Add(randomPoint);
-            total += 1;
+            spawnedObstacles += 1;
         }
         Transform spawn = spawnPoints[randomPoint];
         Instantiate(obstaclePrefabs[randomObstacle], spawn.transform.position, spawn.transform.rotation);

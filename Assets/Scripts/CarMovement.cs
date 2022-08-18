@@ -10,11 +10,6 @@ public class CarMovement : MonoBehaviour
     public float turnSpeed;
     public AudioSource audioSound;
     
-    void Start()
-    {
-        audioSound = GetComponent<AudioSource>();
-    }
-
     void Update()
     {
         MoveControl();

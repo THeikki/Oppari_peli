@@ -38,9 +38,4 @@ public class TimeController : MonoBehaviour
             timeCounter.text = "Time: " + time.ToString("f2").Replace(',', '.');
         }
     }
-
-    public void GameOver()
-    {
-        FindObjectOfType<GameOverMenu>().SetupLapTime(time);
-    }
 }

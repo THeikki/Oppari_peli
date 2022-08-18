@@ -13,12 +13,14 @@ public class GameOverMenu : MonoBehaviour
     public Text gameTimeText;
     public Text penaltyText;
     public Text resultText;
-    float res;
+    float totalTime;
     bool gotNewRecord = false;
  
     void Start()
     {
-        res = TimeController.time + PenaltyController.hits;
+        totalTime = TimeController.time + PenaltyController.penaltySeconds;
+        SetupLapTime(TimeController.time);
+        SetupPenaltySeconds(PenaltyController.penaltySeconds);
         CheckIfRecordTime();
         SetupResult();
     }
@@ -37,11 +39,11 @@ public class GameOverMenu : MonoBehaviour
     {
         if(gotNewRecord)
         {
-            resultText.text = "New Lap Record!: " + res.ToString("f2").Replace(',', '.');
+            resultText.text = "New Lap Record!: " + totalTime.ToString("f2").Replace(',', '.');
         }
         else
         {
-            resultText.text = "Result: " + res.ToString("f2").Replace(',', '.');
+            resultText.text = "Result: " + totalTime.ToString("f2").Replace(',', '.');
         }      
     }
     
@@ -50,7 +52,7 @@ public class GameOverMenu : MonoBehaviour
         if(Game_manager.manager.currentLevel.level == "Savannah")
         {
             float level1LapTime = (float)Convert.ToDouble(PlayerPrefs.GetString("level1LapTime"), CultureInfo.InvariantCulture.NumberFormat);
-            if (res < level1LapTime)
+            if (totalTime < level1LapTime)
             {
                 Debug.Log("New record");
                 gotNewRecord = true;
@@ -59,7 +61,7 @@ public class GameOverMenu : MonoBehaviour
         else if (Game_manager.manager.currentLevel.level == "Mountains")
         {
             float level2LapTime = (float)Convert.ToDouble(PlayerPrefs.GetString("level2LapTime"), CultureInfo.InvariantCulture.NumberFormat);
-            if (res < level2LapTime)
+            if (totalTime < level2LapTime)
             {
                 Debug.Log("New record");
                 gotNewRecord = true;
@@ -68,7 +70,7 @@ public class GameOverMenu : MonoBehaviour
         else if (Game_manager.manager.currentLevel.level == "City")
         {
             float level3LapTime = (float)Convert.ToDouble(PlayerPrefs.GetString("level3LapTime"), CultureInfo.InvariantCulture.NumberFormat);
-            if (res < level3LapTime)
+            if (totalTime < level3LapTime)
             {
                 Debug.Log("New record");
                 gotNewRecord = true;

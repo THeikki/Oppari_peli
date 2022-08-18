@@ -5,25 +5,20 @@ using UnityEngine.UI;
 
 public class PenaltyController : MonoBehaviour
 {
-    public static int hits = 0;
-    public Text hitsCounter;
+    public static int penaltySeconds = 0;
+    public Text penaltyCounter;
     
     void Start()
     {
-        hitsCounter.text = "Penalty seconds: " + hits.ToString();
+        penaltyCounter.text = "Penalty seconds: " + penaltySeconds.ToString();
     }
 
-    public void AddHit(int hit)
+    public void AddHit(int penalty)
     {
         string result;
 
-        result = (hits += hit).ToString();
+        result = (penaltySeconds += penalty).ToString();
         //Debug.Log(result);
-        hitsCounter.text = "Penalty seconds: " + result.ToString();
-    }
-
-    public void GameOver()
-    {
-        FindObjectOfType<GameOverMenu>().SetupPenaltySeconds(hits);
+        penaltyCounter.text = "Penalty seconds: " + result.ToString();
     }
 }

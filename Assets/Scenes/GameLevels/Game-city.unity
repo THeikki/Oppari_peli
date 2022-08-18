@@ -702,7 +702,7 @@ GameObject:
   - component: {fileID: 16826512}
   - component: {fileID: 16826511}
   m_Layer: 0
-  m_Name: TimeController
+  m_Name: TimeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -734,7 +734,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &18724273
 PrefabInstance:
@@ -2898,7 +2898,7 @@ GameObject:
   - component: {fileID: 73965952}
   - component: {fileID: 73965951}
   m_Layer: 0
-  m_Name: UserInputController
+  m_Name: UserInputManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2917,7 +2917,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameIsPaused: 0
-  timerIsOn: 0
+  quitIsPressed: 0
+  pauseIsPressed: 0
+  timerWasOn: 0
   pauseCanvas: {fileID: 356247897}
   quitCanvas: {fileID: 948015692}
 --- !u!4 &73965952
@@ -2932,7 +2934,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &74237026
 PrefabInstance:
@@ -11349,7 +11351,7 @@ GameObject:
   - component: {fileID: 299363534}
   - component: {fileID: 299363533}
   m_Layer: 0
-  m_Name: ObstacleSpawnController
+  m_Name: ObstacleSpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11388,8 +11390,8 @@ MonoBehaviour:
   - {fileID: 1849719306}
   - {fileID: 1468391516}
   takenSpawnPositions: 
-  blockedValues: 
-  missingValues: 
+  blockedPositions: 
+  missingPositions: 
 --- !u!4 &299363534
 Transform:
   m_ObjectHideFlags: 0
@@ -11418,7 +11420,7 @@ Transform:
   - {fileID: 1849719306}
   - {fileID: 1468391516}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &299848147
 PrefabInstance:
@@ -14265,7 +14267,7 @@ RectTransform:
   m_Children:
   - {fileID: 1031837219}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -37657,7 +37659,7 @@ RectTransform:
   m_Children:
   - {fileID: 2107679436}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -37763,7 +37765,7 @@ GameObject:
   - component: {fileID: 950947965}
   - component: {fileID: 950947964}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: ProgressCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47152,36 +47154,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8692728773030435821, guid: 8efa8d8c2949e76459e50a8dc2550455, type: 3}
   m_PrefabInstance: {fileID: 1443757019}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1155362739
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1155362740}
-  m_Layer: 0
-  m_Name: PlayerSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1155362740
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1155362739}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.806, y: 0.629, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1156146968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85935,7 +85907,7 @@ GameObject:
   - component: {fileID: 2117899966}
   - component: {fileID: 2117899965}
   m_Layer: 0
-  m_Name: PenaltyController
+  m_Name: PenaltyManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85953,7 +85925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed00ae1d282fc343b13084a233817bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitsCounter: {fileID: 375743262}
+  penaltyCounter: {fileID: 375743262}
 --- !u!4 &2117899966
 Transform:
   m_ObjectHideFlags: 0
@@ -85966,7 +85938,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2118550562
 PrefabInstance:

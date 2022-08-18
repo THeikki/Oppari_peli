@@ -10,7 +10,7 @@ public class PlayerStatistics : MonoBehaviour
 
     void Start()
     {
-        res = TimeController.time + PenaltyController.hits;
+        res = TimeController.time + PenaltyController.penaltySeconds;
     }
    
     public void IncreaseGameTimes()
