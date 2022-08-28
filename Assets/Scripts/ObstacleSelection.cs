@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class ObstacleSelection : MonoBehaviour
 {
     public GameObject prefab;
-    public Text obstacleName;
-    public Text obstaclePenalty;
-    public Image obstacleImage;
+    Text obstacleName;
+    Text obstaclePenalty;
+    Image obstacleImage;
 
     void Start()
     {

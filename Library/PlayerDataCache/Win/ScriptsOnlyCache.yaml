@@ -579,7 +579,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 860124a91f60d991085e80d76f777480
+      Hash: 220bd265f54cc4cee8f1539ad2b2c64a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObstacleSelection
@@ -651,7 +651,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 14b1603f5c55237cf527a0efe194d3a2
+      Hash: 220bd265f54cc4cee8f1539ad2b2c64a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelSelector
@@ -1095,7 +1095,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: fe67f5b354f5577ea5214da055a1f7b9
+      Hash: 220bd265f54cc4cee8f1539ad2b2c64a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CarSelector

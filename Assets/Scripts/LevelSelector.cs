@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class LevelSelector : MonoBehaviour
 {
     public GameObject prefab;
-    public Button button;
-    public Text levelName;
-    public Image levelImage;
+    Button button;
+    Text levelName;
+    Image levelImage;
 
     void Start()
     {

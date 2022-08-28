@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class CarSelector : MonoBehaviour
 {
     public GameObject prefab;
-    public Button button;
-    public Text carName;
-    public Text carSpeed;
-    public Text carTurning;
-    public Text carInfo;
-    public Image carImage;
+    Button button;
+    Text carName;
+    Text carSpeed;
+    Text carTurning;
+    Text carInfo;
+    Image carImage;
     
     private void Start()
     {

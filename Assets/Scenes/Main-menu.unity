@@ -5756,12 +5756,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 4980620832894336671, guid: aa02df3d2d136814baa086c15608bb0e, type: 3}
-  button: {fileID: 0}
-  carName: {fileID: 0}
-  carSpeed: {fileID: 0}
-  carTurning: {fileID: 0}
-  carInfo: {fileID: 0}
-  carImage: {fileID: 0}
 --- !u!1 &1806459346
 GameObject:
   m_ObjectHideFlags: 0
